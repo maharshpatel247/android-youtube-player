@@ -1,3 +1,10 @@
+[<img src='./images/banner.png' alt="banner"/>](https://playstorereply.com)
+
+:arrow_right: Check out [PlayStoreReply](https://playstorereply.com): reply to Google Play reviews using AI.
+<br/>
+Increase your apps ratings. Engage with all users, no more unanswered reviews.
+Save time and increase customer satisfaction.
+
 # android-youtube-player
 
 [![Build Status](https://travis-ci.com/PierfrancescoSoffritti/android-youtube-player.svg?branch=master)](https://travis-ci.com/PierfrancescoSoffritti/android-youtube-player) 
@@ -26,7 +33,7 @@ A lengthier explanation of why this library was created can be found in [this Me
 ## Who is using this library
 Now that **the official API from Google is deprecated**, `android-youtube-player` is the main YouTube player library for Android.
 
-**Used by over 5 thousands apps**, with some big names like [Flipkart](https://play.google.com/store/apps/details?id=com.flipkart.android), [McDonald's](https://play.google.com/store/apps/details?id=com.mcdo.mcdonalds), [InShot Video Editor](https://play.google.com/store/apps/details?id=com.camerasideas.instashot), [Genius](https://play.google.com/store/apps/details?id=com.genius.android) and [reddit is fun](https://play.google.com/store/apps/details?id=com.andrewshu.android.reddit).
+**Used by over 5 thousands apps**, with some big names like [Tumblr](https://play.google.com/store/apps/details?id=com.tumblr), [Flipkart](https://play.google.com/store/apps/details?id=com.flipkart.android), [McDonald's](https://play.google.com/store/apps/details?id=com.mcdo.mcdonalds), [InShot Video Editor](https://play.google.com/store/apps/details?id=com.camerasideas.instashot), [Genius](https://play.google.com/store/apps/details?id=com.genius.android) and [reddit is fun](https://play.google.com/store/apps/details?id=com.andrewshu.android.reddit).
 
 You can [see more stats here](https://www.appbrain.com/stats/libraries/details/android_youtube_player/android-youtube-player).
 
@@ -123,7 +130,7 @@ Add this to your module level `build.gradle` file.
 
 ```gradle
 dependencies {
-  implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:12.0.0'
+  implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:12.1.0'
 }
 ```
 
@@ -389,6 +396,17 @@ If you need to change the orientation of your Activity/Fragment, remember that b
 </application>
 ```
 
+### Playlist
+You can initialize the player to play playlists instead of videos. This can be done by setting `listType` to `playlist` and then providing the id of the playlist to `list`.
+
+```kotlin
+val iFramePlayerOptions = IFramePlayerOptions.Builder()
+  .controls(1)
+  .listType("playlist")
+  .list(PLAYLIST_ID)
+  .build()
+```
+
 ### Release the YouTubePlayerView
 Remember to release the `YouTubePlayerView` when you're done using it, by calling `YouTubePlayerView.release()`.
 
@@ -618,7 +636,7 @@ Starting from version 12.0.0 of the library, this UI is available as a separate 
 
 ```gradle
 dependencies {
-  implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:{latestversion}'
+  implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:{latest-version}'
   implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:custom-ui:{latest-version}'
 }
 ```
